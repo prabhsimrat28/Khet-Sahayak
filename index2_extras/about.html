@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="about-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span data-translate="projectName">Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span data-translate="home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../rental/account.php" class="nav-link">
+                        <i class="fas fa-user"></i> <span data-translate="account">Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- About Section -->
+            <div class="about-section">
+                <div class="about-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h1 data-translate="aboutTitle">About Khet Sahayak</h1>
+                </div>
+
+                <div class="about-content">
+                    <p data-translate="aboutText">
+                        Welcome to Khet Sahayak, your comprehensive agricultural platform dedicated to empowering farmers, agribusinesses, and enthusiasts with innovative tools for smarter farming. Our platform integrates rental and listing services, personalized crop recommendations, fertilizer advice, and advanced crop disease identification, enabling optimized agricultural productivity and sustainability. Built on cutting-edge technology and agronomic expertise, Khet Sahayak is committed to supporting your farming success with reliable, user-friendly digital solutions.
+                    </p>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="features-grid">
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 data-translate="feature1Title">Equipment Rental</h3>
+                        <p data-translate="feature1Desc">Rent or list agricultural equipment easily. Connect farmers with the tools they need.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 data-translate="feature2Title">Crop Recommendations</h3>
+                        <p data-translate="feature2Desc">Get personalized crop suggestions based on soil, climate, and market conditions.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 data-translate="feature3Title">Fertilizer Advice</h3>
+                        <p data-translate="feature3Desc">Receive expert fertilizer recommendations for optimal crop growth and yield.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 data-translate="feature4Title">Disease Identification</h3>
+                        <p data-translate="feature4Desc">Identify crop diseases early with advanced image recognition technology.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3 data-translate="feature5Title">Weather Forecast</h3>
+                        <p data-translate="feature5Desc">Access real-time weather updates and farming tips for better planning.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-translate="feature6Title">Community Support</h3>
+                        <p data-translate="feature6Desc">Connect with fellow farmers and agricultural experts for guidance.</p>
+                    </div>
+
+                </div>
+
+                <!-- Mission Statement -->
+                <div class="mission-section">
+                    <h2 data-translate="missionTitle">Our Mission</h2>
+                    <p data-translate="missionText">
+                        To empower farmers with technology-driven solutions that enhance productivity, promote sustainable farming practices, and ensure agricultural success for communities across India.
+                    </p>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2 data-translate="ctaTitle">Ready to Get Started?</h2>
+                    <p data-translate="ctaText">Join thousands of farmers who are transforming their agricultural practices with Khet Sahayak.</p>
+                    <div class="cta-buttons">
+                        <a href="../rental/equipment-home.html" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> <span data-translate="getStarted">Get Started</span>
+                        </a>
+                        <a href="../rental/listings.html" class="btn btn-secondary">
+                            <i class="fas fa-list"></i> <span data-translate="browseEquipment">Browse Equipment</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Khet Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="about-script.js"></script>
+</body>
+</html>

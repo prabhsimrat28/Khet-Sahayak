@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 100%;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a859;
+        }
+
+        .logo i {
+            font-size: 28px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #00a859;
+        }
+
+        .nav-link i {
+            font-size: 16px;
+        }
+
+        .language-selector {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            background-color: white;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .language-selector:hover,
+        .language-selector:focus {
+            border-color: #00a859;
+            box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 20px;
+            min-height: calc(100vh - 120px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guide-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .guide-header i {
+            font-size: 64px;
+            color: #00a859;
+            margin-bottom: 20px;
+        }
+
+        .guide-header h1 {
+            font-size: 42px;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .guide-header p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Guide Steps */
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .guide-step {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #00a859;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .guide-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 168, 89, 0.15);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00a859 0%, #008a47 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-number i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .step-title {
+            flex: 1;
+        }
+
+        .step-title h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        .step-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666;
+            margin-left: 70px;
+        }
+
+        /* Manual Section */
+        .manual-section {
+            background: linear-gradient(135deg, #00a859 0%, #008a47 100%);
+            padding: 40px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+
+        .manual-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .manual-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 25px;
+        }
+
+        .manual-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: white;
+            color: #00a859;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .manual-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Quick Tips */
+        .tips-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #e8f5e9;
+            border-radius: 12px;
+            border: 2px dashed #00a859;
+        }
+
+        .tips-section h3 {
+            font-size: 22px;
+            color: #00a859;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips-section h3 i {
+            font-size: 24px;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            font-size: 15px;
+            color: #555;
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .tips-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00a859;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .guide-section {
+                padding: 30px 20px;
+            }
+
+            .guide-header h1 {
+                font-size: 32px;
+            }
+
+            .guide-header p {
+                font-size: 16px;
+            }
+
+            .guide-step {
+                padding: 20px;
+            }
+
+            .step-header {
+                gap: 15px;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+            }
+
+            .step-number i {
+                font-size: 20px;
+            }
+
+            .step-title h2 {
+                font-size: 20px;
+            }
+
+            .step-content p {
+                font-size: 14px;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .manual-section {
+                padding: 30px 20px;
+            }
+
+            .tips-section {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-link span {
+                display: none;
+            }
+
+            .nav-link i {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span data-translate="projectName">Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span data-translate="home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../rental/account.php" class="nav-link">
+                        <i class="fas fa-user"></i> <span data-translate="account">Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- User Guide Section -->
+            <div class="guide-section">
+                <div class="guide-header">
+                    <i class="fas fa-book-open"></i>
+                    <h1 data-translate="guideTitle">User Guide</h1>
+                    <p data-translate="guideSubtitle">Welcome to Khet Sahayak! Follow these simple steps to get started and make the most of our platform.</p>
+                </div>
+
+                <!-- Guide Steps -->
+                <div class="guide-steps">
+                    
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="step-title">
+                                <h2 data-translate="step1Title">Create an Account</h2>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <p data-translate="step1Text">Sign up with your email and verify your profile to get started with Khet Sahayak.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="step-title">
+                                <h2 data-translate="step2Title">Explore Rental/Listing</h2>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <p data-translate="step2Text">Access the rental marketplace to find or offer farm equipment or land for your agricultural needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="step-title">
+                                <h2 data-translate="step3Title">Use Crop Recommendation</h2>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <p data-translate="step3Text">Input details about your farm's soil, location, and preferences to receive tailored crop options.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="step-title">
+                                <h2 data-translate="step4Title">Fertilizer Guidance</h2>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <p data-translate="step4Text">Receive fertilizer type and dosage recommendations suited to your crop and soil conditions.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="step-title">
+                                <h2 data-translate="step5Title">Disease Identification</h2>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <p data-translate="step5Text">Upload clear photos of affected plants to view identified diseases and receive treatment tips.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="step-title">
+                                <h2 data-translate="step6Title">Support</h2>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <p data-translate="step6Text">Use the contact/support section for questions or assistance. Our team is here to help you.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Quick Tips Section -->
+                <div class="tips-section">
+                    <h3 data-translate="tipsTitle"><i class="fas fa-lightbulb"></i> Quick Tips</h3>
+                    <ul class="tips-list">
+                        <li data-translate="tip1">Keep your profile updated for better recommendations</li>
+                        <li data-translate="tip2">Use high-quality images for disease identification</li>
+                        <li data-translate="tip3">Regularly check the marketplace for new equipment listings</li>
+                        <li data-translate="tip4">Consult with local experts alongside our recommendations</li>
+                        <li data-translate="tip5">Enable notifications to stay updated on rental requests</li>
+                    </ul>
+                </div>
+
+                <!-- Manual Section -->
+                <div class="manual-section">
+                    <h2 data-translate="manualTitle">Need More Details?</h2>
+                    <p data-translate="manualText">
+                         If you face any difficulties please feel free to contact our support team.
+                    </p>
+                    <a href="support.html" class="manual-btn">
+                        <i class="fas fa-file-download"></i>
+                        <span data-translate="downloadManual">Contact Support</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Khet Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translation cache
+        const translationCache = {};
+
+        // Load saved language when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSavedLanguage();
+        });
+
+        // Load saved language preference
+        function loadSavedLanguage() {
+            const savedLang = 'en';
+            document.getElementById('languageSelector').value = savedLang;
+            if (savedLang !== 'en') {
+                changeLanguage(savedLang);
+            }
+        }
+
+        // Change language with API translation
+        async function changeLanguage(lang) {
+            document.getElementById('languageSelector').value = lang;
+            
+            if (lang === 'en') {
+                location.reload();
+                return;
+            }
+            
+            showTranslationLoading(true);
+            
+            try {
+                // Translate all elements with data-translate attribute
+                const elementsToTranslate = document.querySelectorAll('[data-translate]');
+                for (const element of elementsToTranslate) {
+                    const originalText = element.textContent.trim();
+                    if (originalText) {
+                        const translated = await translateText(originalText, lang);
+                        element.textContent = translated;
+                    }
+                }
+            } catch (error) {
+                console.error('Translation error:', error);
+            } finally {
+                showTranslationLoading(false);
+            }
+        }
+
+        // Translate text using MyMemory API
+        async function translateText(text, targetLang) {
+            const cacheKey = ${text}_${targetLang};
+            if (translationCache[cacheKey]) {
+                return translationCache[cacheKey];
+            }
+            
+            const langMap = {
+                'hi': 'hi',
+                'pa': 'pa'
+            };
+            
+            const langCode = langMap[targetLang] || targetLang;
+            
+            try {
+                const response = await fetch(
+                    https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${langCode}
+                );
+                
+                const data = await response.json();
+                
+                if (data.responseStatus === 200 && data.responseData.translatedText) {
+                    const translated = data.responseData.translatedText;
+                    translationCache[cacheKey] = translated;
+                    return translated;
+                }
+                
+                return text;
+                
+            } catch (error) {
+                console.error('Translation API error:', error);
+                return text;
+            }
+        }
+
+        // Show/hide translation loading indicator
+        function showTranslationLoading(show) {
+            let loader = document.getElementById('translationLoader');
+            
+            if (show && !loader) {
+                loader = document.createElement('div');
+                loader.id = 'translationLoader';
+                loader.style.cssText = `
+                    position: fixed;
+                    top: 60px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(0, 168, 89, 0.95);
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    z-index: 10000;
+                    font-weight: 600;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                `;
+                loader.innerHTML = '<i class="fas fa-language"></i> Translating...';
+                document.body.appendChild(loader);
+            } else if (!show && loader) {
+                loader.remove();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 100%;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a859;
+        }
+
+        .logo i {
+            font-size: 28px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #00a859;
+        }
+
+        .nav-link i {
+            font-size: 16px;
+        }
+
+        .language-selector {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            background-color: white;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .language-selector:hover,
+        .language-selector:focus {
+            border-color: #00a859;
+            box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 20px;
+            min-height: calc(100vh - 120px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-header i {
+            font-size: 64px;
+            color: #00a859;
+            margin-bottom: 20px;
+            background: #e8f5e9;
+            width: 100px;
+            height: 100px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .faq-header h1 {
+            font-size: 42px;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .faq-header p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* FAQ Items */
+        .faq-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 168, 89, 0.1);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e8f5e9;
+        }
+
+        .question-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .question-icon {
+            width: 45px;
+            height: 45px;
+            background: #00a859;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .question-icon i {
+            font-size: 20px;
+            color: white;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .toggle-icon {
+            width: 35px;
+            height: 35px;
+            background: #00a859;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon i {
+            color: white;
+            font-size: 16px;
+        }
+
+        .faq-item.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 25px 20px 85px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 30px 20px;
+            }
+
+            .faq-header h1 {
+                font-size: 32px;
+            }
+
+            .faq-header p {
+                font-size: 16px;
+            }
+
+            .faq-header i {
+                font-size: 48px;
+                width: 80px;
+                height: 80px;
+            }
+
+            .question-text {
+                font-size: 16px;
+            }
+
+            .question-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .question-icon i {
+                font-size: 18px;
+            }
+
+            .faq-answer-content {
+                padding: 0 20px 20px 60px;
+                font-size: 14px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-link span {
+                display: none;
+            }
+
+            .nav-link i {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span data-translate="projectName">Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span data-translate="home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../rental/account.php" class="nav-link">
+                        <i class="fas fa-user"></i> <span data-translate="account">Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Terms Section -->
+            <div class="faq-section">
+                <div class="faq-header">
+                    <i class="fas fa-file-contract"></i>
+                    <h1 data-translate="termsTitle">Terms of Use</h1>
+                    <p data-translate="termsSubtitle">By accessing and using Khet Sahayak website and services, you agree to comply with and be bound by the following terms and conditions</p>
+                </div>
+
+                <!-- Terms Items -->
+                <div class="faq-items">
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <div class="question-content">
+                                <div class="question-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="question-text" data-translate="q1">User Information Requirements</div>
+                            </div>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content" data-translate="a1">
+                                Users must provide accurate and current information during registration and usage.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <div class="question-content">
+                                <div class="question-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="question-text" data-translate="q2">Informational Purpose Disclaimer</div>
+                            </div>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content" data-translate="a2">
+                                Khet Sahayak provides recommendations and listings for informational purposes and does not guarantee specific results.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <div class="question-content">
+                                <div class="question-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="question-text" data-translate="q3">Rental Transactions and Facilitation</div>
+                            </div>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content" data-translate="a3">
+                                Rental listings and transactions are conducted between users; Khet Sahayak acts only as a facilitator and is not responsible for disputes or damages arising.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <div class="question-content">
+                                <div class="question-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="question-text" data-translate="q4">Lawful Use Requirement</div>
+                            </div>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content" data-translate="a4">
+                                Users must not misuse the platform for unlawful activities or violate any applicable laws.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <div class="question-content">
+                                <div class="question-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="question-text" data-translate="q5">Right to Update Terms</div>
+                            </div>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content" data-translate="a5">
+                                Khet Sahayak reserves the right to update terms or suspend access at any time without prior notice.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <div class="question-content">
+                                <div class="question-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="question-text" data-translate="q6">Limitation of Liability</div>
+                            </div>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content" data-translate="a6">
+                                Liability is limited to the maximum extent permitted by law.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Khet Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle FAQ accordion
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Translation cache
+        const translationCache = {};
+
+        // Load saved language when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSavedLanguage();
+        });
+
+        // Load saved language preference
+        function loadSavedLanguage() {
+            const savedLang = 'en';
+            document.getElementById('languageSelector').value = savedLang;
+            if (savedLang !== 'en') {
+                changeLanguage(savedLang);
+            }
+        }
+
+        // Change language with API translation
+        async function changeLanguage(lang) {
+            document.getElementById('languageSelector').value = lang;
+            
+            if (lang === 'en') {
+                location.reload();
+                return;
+            }
+            
+            showTranslationLoading(true);
+            
+            try {
+                // Translate all elements with data-translate attribute
+                const elementsToTranslate = document.querySelectorAll('[data-translate]');
+                for (const element of elementsToTranslate) {
+                    const originalText = element.textContent.trim();
+                    if (originalText) {
+                        const translated = await translateText(originalText, lang);
+                        element.textContent = translated;
+                    }
+                }
+            } catch (error) {
+                console.error('Translation error:', error);
+            } finally {
+                showTranslationLoading(false);
+            }
+        }
+
+        // Translate text using MyMemory API
+        async function translateText(text, targetLang) {
+            const cacheKey = `${text}_${targetLang}`;
+            if (translationCache[cacheKey]) {
+                return translationCache[cacheKey];
+            }
+            
+            const langMap = {
+                'hi': 'hi',
+                'pa': 'pa'
+            };
+            
+            const langCode = langMap[targetLang] || targetLang;
+            
+            try {
+                const response = await fetch(
+                    `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${langCode}`
+                );
+                
+                const data = await response.json();
+                
+                if (data.responseStatus === 200 && data.responseData.translatedText) {
+                    const translated = data.responseData.translatedText;
+                    translationCache[cacheKey] = translated;
+                    return translated;
+                }
+                
+                return text;
+                
+            } catch (error) {
+                console.error('Translation API error:', error);
+                return text;
+            }
+        }
+
+        // Show/hide translation loading indicator
+        function showTranslationLoading(show) {
+            let loader = document.getElementById('translationLoader');
+            
+            if (show && !loader) {
+                loader = document.createElement('div');
+                loader.id = 'translationLoader';
+                loader.style.cssText = `
+                    position: fixed;
+                    top: 60px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(0, 168, 89, 0.95);
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    z-index: 10000;
+                    font-weight: 600;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                `;
+                loader.innerHTML = '<i class="fas fa-language"></i> Translating...';
+                document.body.appendChild(loader);
+            } else if (!show && loader) {
+                loader.remove();
+            }
+        }
+    </script>
+</body>
+</html>
