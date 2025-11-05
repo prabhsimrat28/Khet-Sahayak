@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0;
+}
+
+.nav-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00a859;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s;
+    white-space: nowrap;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #00a859;
+    background-color: rgba(0, 168, 89, 0.1);
+}
+
+.nav-link i {
+    font-size: 16px;
+}
+
+.language-selector {
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: white;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.language-selector:hover,
+.language-selector:focus {
+    border-color: #00a859;
+    box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.1);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Options Container */
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Option Card */
+.option-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.option-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px;
+    min-height: 450px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover .option-link {
+    background: linear-gradient(135deg, rgba(0, 168, 89, 0.02) 0%, rgba(0, 168, 89, 0.05) 100%);
+}
+
+/* Option Icon */
+.option-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #00a859 0%, #008a47 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
+}
+
+.option-card:hover .option-icon {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 168, 89, 0.3);
+}
+
+.option-icon i {
+    font-size: 56px;
+    color: white;
+}
+
+/* Option Title */
+.option-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Option Description */
+.option-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Option Arrow */
+.option-arrow {
+    margin-top: auto;
+    width: 50px;
+    height: 50px;
+    background-color: #00a859;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover .option-arrow {
+    transform: translateX(10px);
+    background-color: #008a47;
+}
+
+.option-arrow i {
+    font-size: 24px;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .options-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .option-link {
+        min-height: 400px;
+        padding: 50px 30px;
+    }
+
+    .option-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .option-icon i {
+        font-size: 48px;
+    }
+
+    .option-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        gap: 10px;
+    }
+
+    .nav-link span {
+        display: none;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .page-header p {
+        font-size: 16px;
+    }
+
+    .option-link {
+        padding: 40px 25px;
+        min-height: 350px;
+    }
+
+    .option-title {
+        font-size: 22px;
+    }
+
+    .option-description {
+        font-size: 14px;
+    }
+}

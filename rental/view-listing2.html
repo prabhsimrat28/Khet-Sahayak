@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Details - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="view-listing-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span data-translate="projectName">Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span data-translate="home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="listings.html" class="nav-link">
+                        <i class="fas fa-list"></i> <span data-translate="moreListings">More Listings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link">
+                        <i class="fas fa-plus-circle"></i> <span data-translate="rentEquipment">Rent Equipment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+    				<a href="account.php" class="nav-link">
+        				<i class="fas fa-user"></i> <span data-translate="account">Account</span>
+    				</a>
+				</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p data-translate="loading">Loading equipment details...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3 data-translate="errorTitle">Equipment Not Found</h3>
+                <p data-translate="errorMessage">This listing may have been removed or doesn't exist.</p>
+                <a href="listings.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> <span data-translate="backToListings">Back to Listings</span>
+                </a>
+            </div>
+
+            <!-- Equipment Details Container -->
+            <div id="equipmentDetails" class="equipment-details" style="display: none;">
+                
+                <!-- Back Button -->
+                <a href="listings.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> <span data-translate="backToListings">Back to Listings</span>
+                </a>
+
+                <!-- Image Carousel Section -->
+                <div class="image-carousel-section">
+                    <div class="main-carousel">
+                        <div id="mainCarousel" class="carousel-container">
+                            <!-- Images will be inserted here -->
+                        </div>
+                        <button class="carousel-nav-btn prev-btn" onclick="changeMainImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-nav-btn next-btn" onclick="changeMainImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+
+                <!-- Equipment Information -->
+                <div class="equipment-info">
+                    
+                    <!-- Type Badge and Title -->
+                    <div class="header-section">
+                        <span class="equipment-type" id="equipmentType"></span>
+                        <h1 class="equipment-title" id="equipmentTitle"></h1>
+                        <div class="price" id="equipmentPrice"></div>
+                    </div>
+
+                    <!-- Details Grid -->
+                    <div class="details-grid">
+                        
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label" data-translate="ownerName">Owner Name</span>
+                                <span class="detail-value" id="ownerName"></span>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label" data-translate="location">Location</span>
+                                <span class="detail-value" id="location"></span>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label" data-translate="availableFrom">Available From</span>
+                                <span class="detail-value" id="availableFrom"></span>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-calendar-times"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label" data-translate="availableUntil">Available Until</span>
+                                <span class="detail-value" id="availableUntil"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <button id="getPhoneBtn" class="btn btn-primary btn-large" onclick="revealPhoneNumber()">
+                            <i class="fas fa-phone"></i> <span data-translate="getPhoneNumber">Get Phone Number</span>
+                        </button>
+                        
+                        <div id="phoneNumberSection" class="phone-number-section" style="display: none;">
+                            <div class="phone-reveal">
+                                <i class="fas fa-phone-alt"></i>
+                                <span class="phone-number" id="phoneNumber"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Khet Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="view-listing2-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Enable error reporting (for debugging - remove in production)
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Prevent directory browsing
+Options -Indexes
+
+# Protect config file
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Enable rewrite engine
+RewriteEngine On

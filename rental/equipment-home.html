@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Rental - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="equipment-home-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span data-translate="projectName">Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span data-translate="home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="listings.html" class="nav-link">
+                        <i class="fas fa-list"></i> <span data-translate="viewListings">View Listings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link active">
+                        <i class="fas fa-tools"></i> <span data-translate="rentEquipment">List Equipment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+    				<a href="account.php" class="nav-link">
+        				<i class="fas fa-user"></i> <span data-translate="account">Account</span>
+    				</a>
+				</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 data-translate="pageTitle">Equipment Rental Services</h1>
+                <p data-translate="pageSubtitle">Choose how you want to proceed</p>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="options-container">
+                
+                <!-- List Equipment Option -->
+                <div class="option-card">
+                    <a href="index.php" class="option-link">
+                        <div class="option-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h2 class="option-title" data-translate="listEquipmentTitle">List Your Equipment</h2>
+                        <p class="option-description" data-translate="listEquipmentDesc">
+                            Do you have agricultural equipment that you want to rent out? List it here and connect with farmers who need it.
+                        </p>
+                        <div class="option-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- View Listings Option -->
+                <div class="option-card">
+                    <a href="listings.html" class="option-link">
+                        <div class="option-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h2 class="option-title" data-translate="browseEquipmentTitle">Browse Equipment</h2>
+                        <p class="option-description" data-translate="browseEquipmentDesc">
+                            Looking for agricultural equipment to rent? Browse through available equipment listings and find what you need.
+                        </p>
+                        <div class="option-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Khet Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="equipment-home-script.js"></script>
+</body>
+</html>

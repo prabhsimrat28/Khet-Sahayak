@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Listings - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="listings_style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span data-translate="projectName">Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span data-translate="home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i> <span data-translate="listEquipment">List Equipment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+    				<a href="account.php" class="nav-link">
+        				<i class="fas fa-user"></i> <span data-translate="account">Account</span>
+    				</a>
+				</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1><i class="fas fa-list"></i> <span data-translate="pageTitle">Available Equipment for Rent</span></h1>
+                <p data-translate="pageSubtitle">Browse through our collection of agricultural equipment</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="locationFilter" data-translate="filterByLocation">
+                            <i class="fas fa-map-marker-alt"></i> Filter by Location:
+                        </label>
+                        <div class="autocomplete-wrapper">
+                            <input 
+                                type="text" 
+                                id="locationFilter" 
+                                class="filter-input" 
+                                placeholder="Type location (min 3 characters)..."
+                                autocomplete="off"
+                                oninput="handleLocationInput(this.value)"
+                            >
+                            <div id="locationDropdown" class="autocomplete-dropdown"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sortFilter" data-translate="sortBy">
+                            <i class="fas fa-sort"></i> Sort By:
+                        </label>
+                        <select id="sortFilter" class="filter-select" onchange="applyFilters()">
+                            <option value="newest" data-translate="newestFirst">Newest First</option>
+                            <option value="oldest" data-translate="oldestFirst">Oldest First</option>
+                            <option value="price-low" data-translate="priceLowToHigh">Price: Low to High</option>
+                            <option value="price-high" data-translate="priceHighToLow">Price: High to Low</option>
+                        </select>
+                    </div>
+                    
+                    <button class="clear-filters-btn" onclick="clearFilters()">
+                        <i class="fas fa-redo"></i> <span data-translate="clearFilters">Clear Filters</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p data-translate="loading">Loading equipment listings...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3 data-translate="errorTitle">Unable to Load Listings</h3>
+                <p data-translate="errorMessage">Please try again later or contact support.</p>
+            </div>
+
+            <!-- No Listings State -->
+            <div id="noListingsState" class="no-listings-state" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3 data-translate="noListingsTitle">No Equipment Listed Yet</h3>
+                <p data-translate="noListingsMessage">Be the first to list your equipment!</p>
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> <span data-translate="listYourEquipment">List Your Equipment</span>
+                </a>
+            </div>
+
+            <!-- Listings Grid -->
+            <div id="listingsGrid" class="listings-grid" style="display: none;">
+                <!-- Listings will be dynamically inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Khet Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="listing_script.js"></script>
+</body>
+</html>
