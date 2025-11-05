@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast - Khet Sahayak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="weather-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tractor"></i>
+                <span>Khet Sahayak</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index2.html" class="nav-link">
+                        <i class="fas fa-home"></i> <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+    				<a href="rental/account.php" class="nav-link">
+        				<i class="fas fa-user"></i> <span data-translate="account">Account</span>
+    				</a>
+				</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+                <p>Get weather updates for your farm location</p>
+            </div>
+
+            <!-- Location Input Section -->
+            <div class="location-section" id="locationSection">
+                <div class="location-card">
+                    <i class="fas fa-map-marker-alt location-icon"></i>
+                    <h2>Enter Your Location</h2>
+                    <p>Enter your city name to get weather forecast</p>
+                    
+                    <div class="location-input-group">
+                        <input 
+                            type="text" 
+                            id="cityInput" 
+                            class="location-input" 
+                            placeholder="e.g., Chandigarh, Delhi, Mumbai"
+                            onkeypress="handleKeyPress(event)"
+                        >
+                        <button class="btn btn-primary" onclick="getWeatherByCity()">
+                            <i class="fas fa-search"></i> Get Weather
+                        </button>
+                    </div>
+
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+
+                    <button class="btn btn-secondary" onclick="getWeatherByLocation()">
+                        <i class="fas fa-crosshairs"></i> Use My Current Location
+                    </button>
+
+                    <div id="locationError" class="error-msg"></div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <!-- Weather Display Section -->
+            <div class="weather-section" id="weatherSection" style="display: none;">
+                
+                <!-- Current Weather -->
+                <div class="current-weather">
+                    <div class="weather-header">
+                        <div class="location-info">
+                            <h2 id="cityName"><i class="fas fa-map-marker-alt"></i> City Name</h2>
+                            <p id="weatherDate">Date</p>
+                        </div>
+                        <button class="btn btn-small btn-secondary" onclick="changeLocation()">
+                            <i class="fas fa-edit"></i> Change Location
+                        </button>
+                    </div>
+
+                    <div class="weather-main">
+                        <div class="weather-icon-large">
+                            <img id="weatherIcon" src="" alt="Weather Icon">
+                        </div>
+                        <div class="weather-details">
+                            <div class="temperature">
+                                <span id="currentTemp">--</span>°C
+                            </div>
+                            <div class="weather-description" id="weatherDescription">--</div>
+                            <div class="feels-like">Feels like <span id="feelsLike">--</span>°C</div>
+                        </div>
+                    </div>
+
+                    <div class="weather-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-tint"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Humidity</span>
+                                <span class="stat-value" id="humidity">--%</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <i class="fas fa-wind"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Wind Speed</span>
+                                <span class="stat-value" id="windSpeed">-- km/h</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Pressure</span>
+                                <span class="stat-value" id="pressure">-- hPa</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <i class="fas fa-eye"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Visibility</span>
+                                <span class="stat-value" id="visibility">-- km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="additional-info">
+                    <div class="info-card">
+                        <i class="fas fa-sun sunrise-icon"></i>
+                        <div class="info-details">
+                            <span class="info-label">Sunrise</span>
+                            <span class="info-value" id="sunrise">--:--</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-moon sunset-icon"></i>
+                        <div class="info-details">
+                            <span class="info-label">Sunset</span>
+                            <span class="info-value" id="sunset">--:--</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-temperature-high"></i>
+                        <div class="info-details">
+                            <span class="info-label">Max Temp</span>
+                            <span class="info-value" id="tempMax">--°C</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-temperature-low"></i>
+                        <div class="info-details">
+                            <span class="info-label">Min Temp</span>
+                            <span class="info-value" id="tempMin">--°C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Farming Tips -->
+                <div class="farming-tips">
+                    <h3><i class="fas fa-lightbulb"></i> Farming Tips for Today</h3>
+                    <div id="farmingTips" class="tips-content"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="weather-script.js"></script>
+</body>
+</html>

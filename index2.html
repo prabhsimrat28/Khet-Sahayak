@@ -1,0 +1,384 @@
+/*a href buttons were deleted add them*/
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khet Sahayak</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <style>
+      /* --- language dropdown styling --- */
+      #languageSwitcher {
+        margin-left: 15px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      /* --- Team cards spacing fix --- */
+      .about .box-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .about .box {
+        flex: 1 1 250px;
+        max-width: 300px;
+        text-align: center;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- navbar sections starts  -->
+    <header class="header">
+      <div class="logo">
+        <h1 id="site_title">Khet Sahayak</h1>
+      </div>
+
+      <nav class="navbar">
+        <a href="#home" id="nav_home">Home</a>
+        <a href="#features" id="nav_features">Features</a>
+        <a href="index2_extras/about.html" id="nav_about">About</a>
+        <a href="#footer" id="nav_contact">Contact</a>
+        <a href="explore/index.html" class="btn" id="nav_explore">Explore Now</a>
+        <a href="rental/account.php" class="btn" id="nav_explore">Account</a>
+        <select id="languageSwitcher">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="pa">ਪੰਜਾਬੀ</option>
+        </select>
+      </nav>
+
+      <div class="fas fa-bars" id="menu-btn"></div>
+    </header>
+    <!-- navbar sections ends  -->
+
+    <!-- features section starts  -->
+    <section class="features" id="features">
+      <div class="heading">
+        <h1 id="features_heading">Features</h1>
+      </div>
+
+      <div class="button-container0">
+        <a href="https://kevinbijish-crop-webapp-es9ky8.streamlit.app/" class="buttonn active" id="btn_crop">Crop Recommendations</a>
+        <a href="https://kevinbijish-khet-khet-4dgtfz.streamlit.app/" class="buttonn" id="btn_disease">Identify Plant Diseases</a>
+        <a href="weather.html" class="buttonn" id="btn_weather">Today's Weather Forecast</a>
+        <a href="https://kevinbijish-fertilizer-fet-b1pvla.streamlit.app/" class="buttonn" id="btn_fertilizer">Fertilizer Recommendation</a>
+        <a href="guide/index.html" class="buttonn" id="btn_guidance">Smart Farming Guidance</a>
+        <a href="rental/equipment-home.html" class="buttonn" id="btn_rent">Rent/List Equipment</a>
+      </div>
+
+      <div class="row">
+        <!-- Weather Forecast -->
+        <div class="image">
+          <img src="images/weather.avif" alt="weather" class="rounded-corner-image" />
+        </div>
+        <div class="content">
+          <h1 id="feature_weather_title">Weather Forecast</h1>
+          <p id="feature_weather_text">Get Weather insights.</p>
+          <a href="weather.html" class="all-btn">more info</a>
+        </div>
+
+        <!-- Smart Crop Planning -->
+        <div class="content">
+          <h1 id="feature_crop_title">Smart Crop Planning</h1>
+          <p id="feature_crop_text">Plan according to the ideal conditions required by each crop.</p>
+          <a href="guide/index.html" class="all-btn">more info</a>
+        </div>
+        <div class="image">
+          <img src="images/smart_guide.jpg" alt="crop-planning" class="rounded-corner-image" />
+        </div>
+
+        <!-- Plant Disease -->
+        <div class="image">
+          <img src="images/plant_disease.png" alt="Disease-Detection" class="rounded-corner-image" />
+        </div>
+        <div class="content">
+          <h1 id="feature_disease_title">Plant Disease Identification</h1>
+          <p id="feature_disease_text">Upload image to detect Plant Disease.</p>
+          <a href="https://kevinbijish-khet-khet-4dgtfz.streamlit.app/" class="all-btn">more info</a>
+        </div>
+
+        <!-- Fertilizer -->
+        <div class="content">
+          <h1 id="feature_fertilizer_title">Fertilizer Detection</h1>
+          <p id="feature_fertilizer_text">Upload Soil Report and know which Fertilizer is best.</p>
+          <a href="https://kevinbijish-fertilizer-fet-b1pvla.streamlit.app/" class="all-btn">more info</a>
+        </div>
+        <div class="image">
+          <img src="images/fertilizer.jpg" alt="fertilizer" class="rounded-corner-image" />
+        </div>
+
+        <!-- Rent Equipment -->
+        <div class="image">
+          <img src="images/equipment.jpg" alt="equipment" class="rounded-corner-image" />
+        </div>
+        <div class="content">
+          <h1 id="feature_rent_title">Rent/List Equipment</h1>
+          <p id="feature_rent_text">Rent or list what you are willing to rent.</p>
+          <a href="rental/index.php" class="all-btn">more info</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section starts -->
+    <section class="about" id="about">
+      <div class="heading">
+        <h1 id="team_heading">Team Members</h1>
+        <p id="team_intro">
+          Introduce the talented individuals shaping the Khet Sahayak project.
+        </p>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="images/prabhsimrat.jpg" alt="member-1" />
+          <h3>Prabhsimrat Singh</h3>
+          <p>B.Tech | CSE <br />Thapar University</p>
+          <a href="https://www.linkedin.com/in/prabhsimrat-singh-6822b92a8/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/prabhsimrat28" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+
+        <div class="box">
+          <img src="images/lavish.jpg" alt="member-2" />
+          <h3>Lavish Gupta</h3>
+          <p>B.Tech | CSE <br />Thapar University</p>
+          <a href="https://github.com/Lavish102317132" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+
+        <div class="box">
+          <img src="images/kevin.jpg" alt="member-3" />
+          <h3>Kevin Punnen Bijish</h3>
+          <p>B.Tech | CSE <br />Thapar University</p>
+          <a href="" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/KevinBijish" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section starts -->
+    <section class="footer" id="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3 id="footer_quick">Quick Links</h3>
+          <a href="#home"><i class="fas fa-chevron-right"></i><span id="f_home">Home</span></a>
+          <a href="#features"><i class="fas fa-chevron-right"></i><span id="f_features">Features</span></a>
+          <a href="index2_extras/about.html"><i class="fas fa-chevron-right"></i><span id="f_about">About</span></a>
+        </div>
+
+        <div class="box">
+          <h3 id="footer_extra">Extra Links</h3>
+          <a href="index2_extras/support.html"><i class="fas fa-chevron-right"></i><span id="f_questions">Ask Questions</span></a>
+          <a href="index2_extras/Terms_of_use.html"><i class="fas fa-chevron-right"></i><span id="f_terms">Terms of Use</span></a>
+          <a href="index2_extras/privacy.html"><i class="fas fa-chevron-right"></i><span id="f_privacy">Privacy Policy</span></a>
+        </div>
+
+        <div class="box">
+          <h3 id="footer_help">Helpful Resources</h3>
+          <a href="index2_extras/FAQ.html"><i class="fas fa-chevron-right"></i><span id="f_faqs">FAQs</span></a>
+          <a href="index2_extras/guide.html"><i class="fas fa-chevron-right"></i><span id="f_guides">User Guides</span></a>
+          <a href="index2_extras/support.html"><i class="fas fa-chevron-right"></i><span id="f_support">Support Center</span></a>
+        </div>
+
+        <div class="box">
+          <h3 id="footer_connect">Stay Connected</h3>
+          <a href="index2_extras/Future_scope.html"><i class="fas fa-chevron-right"></i><span id="f_future">Future Scope</span></a>
+          </div>
+      </div>
+
+      <div class="credit">
+        <span id="copyright">© Copyright – All Rights Reserved</span>
+        <a href="#" target="_blank"><span id="team_name">Team Khet Sahayak</span></a>
+      </div>
+    </section>
+
+    <!-- JS for language switching -->
+    <script>
+      const translations = {
+        en: {
+          site_title: "Khet Sahayak",
+          nav_home: "Home",
+          nav_features: "Features",
+          nav_about: "About",
+          nav_contact: "Contact",
+          nav_explore: "EXPLORE NOW",
+          features_heading: "Features",
+          btn_crop: "Crop Recommendations",
+          btn_disease: "Identify Plant Diseases",
+          btn_weather: "Today's Weather Forecast",
+          btn_fertilizer: "Fertilizer Recommendation",
+          btn_guidance: "Smart Farming Guidance",
+          btn_rent: "Rent/List Equipment",
+          feature_weather_title: "Weather Forecast",
+          feature_weather_text: "Get Weather insights.",
+          feature_crop_title: "Smart Crop Planning",
+          feature_crop_text: "Plan according to the ideal conditions required by each crop.",
+          feature_disease_title: "Plant Disease Identification",
+          feature_disease_text: "Upload image to detect Plant Disease.",
+          feature_fertilizer_title: "Fertilizer Detection",
+          feature_fertilizer_text: "Upload Soil Report and know which Fertilizer is best.",
+          feature_rent_title: "Rent/List Equipment",
+          feature_rent_text: "Rent or list what you are willing to rent.",
+          team_heading: "Team Members",
+          team_intro: "Introduce the talented individuals shaping the Khet Sahayak project.",
+          footer_quick: "Quick Links",
+          footer_extra: "Extra Links",
+          footer_help: "Helpful Resources",
+          footer_connect: "Stay Connected",
+          f_home: "Home",
+          f_features: "Features",
+          f_about: "About",
+          f_questions: "Ask Questions",
+          f_terms: "Terms of Use",
+          f_privacy: "Privacy Policy",
+          f_faqs: "FAQs",
+          f_guides: "User Guides",
+          f_support: "Support Center",
+          f_future: "Future Scope",
+          f_forum: "Community Forum",
+          f_newsletter: "Newsletter",
+          copyright: "© Copyright – All Rights Reserved",
+          team_name: "Team Khet Sahayak",
+        },
+
+        hi: {
+          site_title: "खेत सहायक",
+          nav_home: "होम",
+          nav_features: "विशेषताएँ",
+          nav_about: "हमारे बारे में",
+          nav_contact: "संपर्क करें",
+          nav_explore: "अभी अन्वेषण करें",
+          features_heading: "विशेषताएँ",
+          btn_crop: "फसल अनुशंसा",
+          btn_disease: "पौधों की बीमारियों की पहचान",
+          btn_weather: "आज का मौसम",
+          btn_fertilizer: "फ़र्टीलाइज़र अनुशंसा",
+          btn_guidance: "स्मार्ट खेती गाइड",
+          btn_rent: "उपकरण किराए पर लें / सूचीबद्ध करें",
+          feature_weather_title: "आज का मौसम",
+          feature_weather_text: "मौसम की जानकारी प्राप्त करें।",
+          feature_crop_title: "स्मार्ट फसल योजना",
+          feature_crop_text: "हर फसल की आदर्श परिस्थितियों के अनुसार योजना बनाएं।",
+          feature_disease_title: "पौध रोग पहचान",
+          feature_disease_text: "पौध रोग का पता लगाने के लिए फोटो अपलोड करें।",
+          feature_fertilizer_title: "फ़र्टीलाइज़र पहचान",
+          feature_fertilizer_text: "मिट्टी की रिपोर्ट अपलोड करें और जानें कि कौन सा फ़र्टीलाइज़र सबसे अच्छा है।",
+          feature_rent_title: "उपकरण किराए पर लें / सूचीबद्ध करें",
+          feature_rent_text: "किराए पर देने या लेने के लिए उपकरण सूचीबद्ध करें।",
+          team_heading: "टीम सदस्य",
+          team_intro: "खेत सहायक योजना को आकार देने वाले प्रतिभाशाली व्यक्तियों का परिचय।",
+          footer_quick: "त्वरित लिंक",
+          footer_extra: "अतिरिक्त लिंक",
+          footer_help: "सहायक संसाधन",
+          footer_connect: "जुड़े रहें",
+          f_home: "होम",
+          f_features: "विशेषताएँ",
+          f_about: "हमारे बारे में",
+          f_questions: "प्रश्न पूछें",
+          f_terms: "उपयोग की शर्तें",
+          f_privacy: "गोपनीयता नीति",
+          f_faqs: "अक्सर पूछे जाने वाले प्रश्न",
+          f_guides: "उपयोगकर्ता मार्गदर्शिकाएँ",
+          f_support: "सहायता केंद्र",
+          f_future: "भविष्य की संभावनाएँ",
+          f_forum: "समुदाय मंच",
+          f_newsletter: "न्यूज़लेटर",
+          copyright: "© कॉपीराइट – सर्वाधिकार सुरक्षित",
+          team_name: "टीम खेत सहायक",
+        },
+
+        pa: {
+          site_title: "ਖੇਤ ਸਹਾਇਕ",
+          nav_home: "ਘਰ",
+          nav_features: "ਖਾਸ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
+          nav_about: "ਸਾਡੇ ਬਾਰੇ",
+          nav_contact: "ਸੰਪਰਕ ਕਰੋ",
+          nav_explore: "ਹੁਣ ਖੋਜ ਕਰੋ",
+          features_heading: "ਖਾਸ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
+          btn_crop: "ਸਰਵੋਤਮ ਫਸਲ",
+          btn_disease: "ਪੌਦੇ ਦੀਆਂ ਬਿਮਾਰੀਆਂ ਦੀ ਪਛਾਣ ਕਰੋ",
+          btn_weather: "ਅੱਜ ਦਾ ਮੌਸਮ",
+          btn_fertilizer: "ਸਰਵੋਤਮ ਖਾਦ",
+          btn_guidance: "ਸਮਾਰਟ ਖੇਤੀ",
+          btn_rent: "ਉਪਕਰਨ ਕਿਰਾਏ ਤੇ / ਸੂਚੀਬੱਧ ਕਰੋ",
+          feature_weather_title: "ਮੌਸਮ ਦੀ ਰਿਪੋਰਟ",
+          feature_weather_text: "ਮੌਸਮ ਬਾਰੇ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰੋ।",
+          feature_crop_title: "ਸਮਾਰਟ ਫਸਲ ਯੋਜਨਾ",
+          feature_crop_text: "ਹਰ ਫਸਲ ਦੀ ਲੋੜ ਅਨੁਸਾਰ ਯੋਜਨਾ ਬਣਾਓ।",
+          feature_disease_title: "ਪੌਧੇ ਦੀ ਬਿਮਾਰੀ ਦੀ ਪਛਾਣ",
+          feature_disease_text: "ਪੌਧੇ ਦੀ ਬਿਮਾਰੀ ਦਾ ਪਤਾ ਲਗਾਉਣ ਲਈ ਫੋਟੋ ਅਪਲੋਡ ਕਰੋ।",
+          feature_fertilizer_title: "ਖਾਦ ਦੀ ਪਛਾਣ",
+          feature_fertilizer_text: "ਮਿੱਟੀ ਦੀ ਰਿਪੋਰਟ ਅਪਲੋਡ ਕਰੋ ਅਤੇ ਸਭ ਤੋਂ ਵਧੀਆ ਖਾਦ ਬਾਰੇ ਜਾਣੋ।",
+          feature_rent_title: "ਉਪਕਰਨ ਕਿਰਾਏ ਤੇ / ਸੂਚੀਬੱਧ ਕਰੋ",
+          feature_rent_text: "ਜੋ ਉਪਕਰਨ ਤੁਸੀਂ ਕਿਰਾਏ ਤੇ ਦੇਣਾ ਜਾਂ ਲੈਣਾ ਚਾਹੁੰਦੇ ਹੋ ਉਹ ਦਰਜ ਕਰੋ।",
+          team_heading: "ਟੀਮ ਮੈਂਬਰ",
+          team_intro: "ਖੇਤ ਸਹਾਇਕ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਸ਼ਕਲ ਦੇਣ ਵਾਲੇ ਪ੍ਰਤਿਭਾਸ਼ਾਲੀ ਵਿਅਕਤੀਆਂ ਦਾ ਪਰੀਚਯ।",
+          footer_quick: "ਤੁਰੰਤ ਲਿੰਕ",
+          footer_extra: "ਵਾਧੂ ਲਿੰਕ",
+          footer_help: "ਮਦਦਗਾਰ ਸਰੋਤ",
+          footer_connect: "ਜੁੜੇ ਰਹੋ",
+          f_home: "ਘਰ",
+          f_features: "ਖਾਸ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
+          f_about: "ਸਾਡੇ ਬਾਰੇ",
+          f_questions: "ਸਵਾਲ ਪੁੱਛੋ",
+          f_terms: "ਵਰਤੋਂ ਦੀਆਂ ਸ਼ਰਤਾਂ",
+          f_privacy: "ਗੋਪਨੀਯਤਾ ਨੀਤੀ",
+          f_faqs: "ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ",
+          f_guides: "ਉਪਭੋਗਤਾ ਗਾਈਡਾਂ",
+          f_support: "ਸਹਾਇਤਾ ਕੇਂਦਰ",
+          f_future: "ਭਵਿੱਖ ਦਾ ਦਾਇਰਾ",
+          f_forum: "ਕਮਿਊਨਿਟੀ ਫੋਰਮ",
+          f_newsletter: "ਨਿਊਜ਼ਲੈਟਰ",
+          copyright: "© ਕਾਪੀਰਾਈਟ – ਸਾਰੇ ਅਧਿਕਾਰ ਰਾਖਵੇਂ ਹਨ",
+          team_name: "ਟੀਮ ਖੇਤ ਸਹਾਇਕ",
+        },
+      };
+
+      function applyLanguage(lang) {
+        const current = translations[lang];
+        for (const key in current) {
+          const el = document.getElementById(key);
+          if (el) el.textContent = current[key];
+        }
+        localStorage.setItem("language", lang);
+      }
+
+      document.getElementById("languageSwitcher").addEventListener("change", (e) => {
+        applyLanguage(e.target.value);
+      });
+
+      const savedLang = localStorage.getItem("language") || "en";
+      document.getElementById("languageSwitcher").value = savedLang;
+      applyLanguage(savedLang);
+    </script>
+  </body>
+    <script src="js/main.js"></script>
+</html>
