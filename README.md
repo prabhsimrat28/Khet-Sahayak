@@ -4,8 +4,8 @@ Khet Sahayak – Smart Farming Assistance Platform
 Khet Sahayak is a web platform designed to help farmers make better agricultural decisions using technology. The platform provides tools for weather insights, crop and fertilizer recommendations, plant disease detection, and a community-driven equipment marketplace.
 Most features are accessible without requiring a login, making the platform easy and accessible for farmers.
 
-**Features**
-**1. Weather Insights**
+## **Features**
+ ### **1. Weather Insights**
 
 
 • Provides real-time weather information to help farmers plan their farming activities.
@@ -22,13 +22,13 @@ Most features are accessible without requiring a login, making the platform easy
 
 • Other relevant weather conditions.
 
-Users can:
+#### Users can:
 
 Enter their location manually, or
 
 Allow location access for automatic detection.
 
-**2. Plant Disease Detection**
+### **2. Plant Disease Detection**
 
 • Helps farmers detect diseases in crops using leaf images.
 
@@ -38,7 +38,7 @@ Allow location access for automatic detection.
 
 • Detects possible plant diseases and provides the result.
 
-**3. Fertilizer Recommendation System**
+### **3. Fertilizer Recommendation System**
 
 Suggests the most suitable fertilizer for a crop.
 
@@ -50,7 +50,7 @@ Inputs required:
 
 Based on the input values, the system recommends the best fertilizer for optimal crop growth.
 
-**4. Crop Recommendation System**
+### **4. Crop Recommendation System**
 
 • Helps farmers decide which crop is best suited for their soil.
 
@@ -59,7 +59,7 @@ Based on the input values, the system recommends the best fertilizer for optimal
 • The system analyzes soil conditions and recommends the most suitable crops to grow.
 
 
-**5. Equipment Marketplace (List / Find Equipment)**
+### **5. Equipment Marketplace (List / Find Equipment)**
 
 This feature allows farmers to rent or find agricultural equipment, helping them earn extra income and access tools they may not own.
 
@@ -69,7 +69,7 @@ Users must sign up or log in to list equipment.
 
 
 
-Listing Equipment
+#### **Listing Equipment**
 
 Farmers can list their equipment by providing:
 
@@ -87,7 +87,7 @@ Once listed, the equipment becomes visible on the platform for others to discove
 
 
 
-Finding Equipment
+#### **Finding Equipment**
 
 Farmers looking for equipment can:
 
@@ -99,13 +99,13 @@ Farmers looking for equipment can:
 
 • Sort listings by:
 
-Newest listings
+• Newest listings
 
-Cheapest listings
+• Cheapest listings
 
 
 
-Listing Details
+#### Listing Details
 
 When a user selects a listing, they can view:
 
@@ -123,7 +123,7 @@ A "Get Contact" button reveals the owner’s contact details so users can direct
 
 
 
-**Account Features**
+### **Account Features**
 
 
 
