@@ -27,6 +27,7 @@ Most features are accessible without requiring a login, making the platform easy
 Enter their location manually, or
 
 Allow location access for automatic detection.
+<br> 
 
 ### **2. Plant Disease Detection**
 
@@ -37,6 +38,7 @@ Allow location access for automatic detection.
 • The system analyzes the image using a trained model.
 
 • Detects possible plant diseases and provides the result.
+<br>
 
 ### **3. Fertilizer Recommendation System**
 
@@ -49,6 +51,7 @@ Inputs required:
 • Type of crop
 
 Based on the input values, the system recommends the best fertilizer for optimal crop growth.
+<br>
 
 ### **4. Crop Recommendation System**
 
@@ -57,7 +60,7 @@ Based on the input values, the system recommends the best fertilizer for optimal
 • Users input their soil report values.
 
 • The system analyzes soil conditions and recommends the most suitable crops to grow.
-
+<br>
 
 ### **5. Equipment Marketplace (List / Find Equipment)**
 
@@ -66,7 +69,6 @@ This feature allows farmers to rent or find agricultural equipment, helping them
 Authentication Required
 
 Users must sign up or log in to list equipment.
-
 
 
 #### **Listing Equipment**
@@ -122,8 +124,8 @@ When a user selects a listing, they can view:
 A "Get Contact" button reveals the owner’s contact details so users can directly communicate and finalize the rental.
 
 
-
-### **Account Features**
+<br>
+### **6. Account Features**
 
 
 
