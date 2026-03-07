@@ -7,11 +7,17 @@ Most features are accessible without requiring a login, making the platform easy
 Features
 1. Weather Insights
 • Provides real-time weather information to help farmers plan their farming activities.
+
 • Fetches weather data using a weather API.
+
 • Displays key weather parameters such as:
+
 • Maximum temperature
+
 • Minimum temperature
+
 • Humidity
+
 • Other relevant weather conditions.
 
 Users can:
