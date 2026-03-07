@@ -102,7 +102,7 @@ A **"Get Contact"** button reveals the owner’s contact details so users can di
 ---
 
 ### **6. Account Features**
-
+<img src="screenshots/Login.png" width="800">
 • Logged-in users can manage their account and listings.  
 
 Available options include:
