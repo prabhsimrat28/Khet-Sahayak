@@ -10,7 +10,7 @@ Most features are accessible **without requiring a login**, making the platform 
 ## **Features**
 
 ### **1. Weather Insights**
-
+<img src="screenshots/Weather.png" width="800">
 • Provides real-time weather information to help farmers plan their farming activities.  
 • Fetches weather data using a weather API.  
 • Displays key weather parameters such as:
@@ -50,7 +50,7 @@ Based on the input values, the system recommends the **best fertilizer for optim
 ---
 
 ### **4. Crop Recommendation System**
-
+<img src="screenshots/CropRecommendation.png" width="800">
 • Helps farmers decide which crop is best suited for their soil.  
 • Users input their soil report values.  
 • The system analyzes soil conditions and recommends the most suitable crops to grow.  
@@ -58,7 +58,7 @@ Based on the input values, the system recommends the **best fertilizer for optim
 ---
 
 ### **5. Equipment Marketplace (List / Find Equipment)**
-
+<img src="screenshots/ExploreListings.png" width="800">
 This feature allows farmers to **rent or find agricultural equipment**, helping them earn extra income and access tools they may not own.
 
 Authentication Required
@@ -77,7 +77,7 @@ Farmers can list their equipment by providing:
 Once listed, the equipment becomes visible on the platform for others to discover.
 
 #### **Finding Equipment**
-
+<img src="screenshots/Listings.png" width="800">
 Farmers looking for equipment can:
 
 • Browse available listings  
